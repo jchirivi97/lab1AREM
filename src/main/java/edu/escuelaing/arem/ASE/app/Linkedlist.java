@@ -7,45 +7,92 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import edu.escuelaing.arem.ASE.app.*;
+import edu.escuelaing.arem.ASE.app.Nodo;
 
 /**
  * @author jimmy.chirivi
  *
  */
 public class Linkedlist<E> implements List<E>{
-	private Nodo<E> nodohead;
-	private Nodo<E> nodonew;
-	int contador = 0;
+	private Nodo nodofirst;
+	private Nodo nodolast;
+	private Nodo nodonew;
+	private Nodo nodoremove, nodoprev, nodoact;
+	int longitud;
 	public Linkedlist(){
-		
+		longitud = 0;
+		nodofirst = null;
+		nodolast = null;
+	}
+	
+	public float getFirst() {
+		return nodofirst.getDatoNodo();
+	}
+	
+	public float getLast() {
+		return nodolast.getDatoNodo();
 	}
 
-	public boolean add(E nodo) {
+	public boolean add(float nodo) {
+		nodonew = new Nodo(nodo);
 		if (isEmpty()) {
-			nodonew = new Nodo<E>();
-			nodonew.setDatoNodo(nodo);
-			nodohead.setNextNodo(nodonew);
-			nodohead.setPrevNodo(nodonew);
-			contador += 1;
+			nodofirst = nodonew;
+			nodolast = nodofirst;
+			longitud += 1;
 			return true;
 		}
 		else {
-			nodonew = new Nodo<E>();
-			nodohead.getNextNodo().setNextNodo(nodonew);
-			nodohead.setPrevNodo(nodonew);
-			contador +=1;
+			nodolast.setNextNodo(nodonew);
+			nodolast = nodonew;
+			longitud +=1;
 			return true;
 		}
 	}
 	
 	public boolean isEmpty() {
-		if (contador == 0) {
+		if (longitud == 0) {
 			return true;
 		} 
 		else {
 			return false;
 		}
+	}
+	
+	public int size() {
+		return longitud;
+	}
+	
+	public Nodo removeFirst() {
+		nodoremove = nodofirst;
+		nodoprev = nodofirst;
+		nodoact = nodofirst.getNextNodo();
+		nodofirst = nodoact;
+		for (int i = 1; i < size();i++) {
+			nodoprev = nodoact;
+			nodoact = nodoprev.getNextNodo();
+			nodoprev.setNextNodo(nodoact);
+		}
+		longitud -= 1;
+		return nodoremove;
+	}
+	
+	public Nodo removeLast() {
+		nodoprev = nodofirst;
+		nodoact = nodofirst.getNextNodo();
+		for(int i = 1 ; i < size();i++) {
+			nodoprev = nodoact;
+			nodoact = nodoprev.getNextNodo();
+		}
+		longitud -= 1;
+		nodoprev.setNextNodo(null);
+		return nodoact;
+	}
+	
+	public E remove(int index) {
+		if (index == 0) {
+			
+		}					
+		return null;
 	}
 
 	public void add(int index, E element) {
@@ -108,15 +155,9 @@ public class Linkedlist<E> implements List<E>{
 		return null;
 	}
 
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
-	public E remove(int index) {
-		
-		return null;
-	}
+	
 
 	public boolean removeAll(Collection<?> c) {
 		// TODO Auto-generated method stub
@@ -133,11 +174,7 @@ public class Linkedlist<E> implements List<E>{
 		return null;
 	}
 
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	
 	public List<E> subList(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
 		return null;
@@ -151,6 +188,16 @@ public class Linkedlist<E> implements List<E>{
 	public <T> T[] toArray(T[] a) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public boolean add(E e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

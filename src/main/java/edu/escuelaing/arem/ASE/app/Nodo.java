@@ -7,39 +7,34 @@ package edu.escuelaing.arem.ASE.app;
  * @author jimmy.chirivi
  *
  */
-public class Nodo<E> {
+public class Nodo {
 	
-	public E dato;
+	private float dato;
 	private Nodo next;
-	private Nodo previous;
 	
-	public Nodo() {
+	public Nodo(float dato) {
+		this.dato = dato;
+		this.next = null;
 	}
 	
 	
-	public void setDatoNodo(E dato) {
+	public void setDatoNodo(int dato) {
 		this.dato = dato;
 	}
 	
-	public E getDatoNodo() {
+	public float getDatoNodo() {
 		return dato;
 	}
 	
 	public void setNextNodo(Nodo next) {
 		this.next = next;
 	}
-	
-	public void setPrevNodo(Nodo next) {
-		this.next = next;
-	}
-	
+			
 	public Nodo getNextNodo() {
 		return next;
 	}
 	
-	public Nodo getPrevNodo() {
-		return previous;
-	}
+	
 }
 
 
