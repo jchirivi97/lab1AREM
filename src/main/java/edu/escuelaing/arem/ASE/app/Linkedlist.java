@@ -17,20 +17,29 @@ public class Linkedlist<E> implements List<E>{
 	private Nodo nodofirst;
 	private Nodo nodolast;
 	private Nodo nodonew;
-	private Nodo nodoremove, nodoprev, nodoact;
+	private Nodo nodoremove, nodoprev, nodoact,nodonext;
 	int longitud;
+	
+	
+	/**
+	 *Creador de la clase Linkedlist 
+	 *
+	 *@param No tiene elementos de entrada
+	 *@see Se crea una lista indexada donde se define l
+	 *
+	 */
 	public Linkedlist(){
 		longitud = 0;
 		nodofirst = null;
 		nodolast = null;
 	}
 	
-	public float getFirst() {
-		return nodofirst.getDatoNodo();
+	public Nodo getFirst() {
+		return nodofirst;
 	}
 	
-	public float getLast() {
-		return nodolast.getDatoNodo();
+	public Nodo getLast() {
+		return nodolast;
 	}
 
 	public boolean add(float nodo) {
@@ -89,9 +98,25 @@ public class Linkedlist<E> implements List<E>{
 	}
 	
 	public E remove(int index) {
+		index += 1; 
 		if (index == 0) {
-			
-		}					
+			removeFirst();
+		}
+		else {
+			nodoprev = nodofirst;
+			nodonext = nodofirst.getNextNodo();
+			for(int i = 1; i < index;i++) {
+				if (i == index-1) {
+					nodoprev.setNextNodo(nodonext.getNextNodo());
+				}
+				else {
+					nodoprev = nodonext;
+					nodonext = nodonext.getNextNodo();
+				}
+				
+			}
+		}
+		longitud -= 1;
 		return null;
 	}
 
