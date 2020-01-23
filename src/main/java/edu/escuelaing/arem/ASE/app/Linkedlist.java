@@ -13,7 +13,7 @@ import edu.escuelaing.arem.ASE.app.Nodo;
  * @author jimmy.chirivi
  *
  */
-public class Linkedlist<E> implements List<E>{
+public class Linkedlist implements List<Nodo>{
 	private Nodo nodofirst;
 	private Nodo nodolast;
 	private Nodo nodonew;
@@ -97,7 +97,7 @@ public class Linkedlist<E> implements List<E>{
 		return nodoact;
 	}
 	
-	public E remove(int index) {
+	public Nodo remove(int index) {
 		index += 1; 
 		if (index == 0) {
 			removeFirst();
@@ -120,64 +120,56 @@ public class Linkedlist<E> implements List<E>{
 		return null;
 	}
 
-	public void add(int index, E element) {
-		// TODO Auto-generated method stub
+	public void add(int index, Nodo element) {
+		throw new RuntimeException ("Metodo en proceso");
 		
 	}
 
-	public boolean addAll(Collection<? extends E> c) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addAll(Collection<? extends Nodo> c) {
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
-	public boolean addAll(int index, Collection<? extends E> c) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addAll(int index, Collection<? extends Nodo> c) {
+		throw new RuntimeException ("Metodo en proceso");
+		
 	}
 
 	public void clear() {
-		// TODO Auto-generated method stub
+		throw new RuntimeException ("Metodo en proceso");
 		
 	}
 
 	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new RuntimeException ("Metodo en proceso");
+		
 	}
 
 	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
-	public E get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+	public Nodo get(int index) {
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public int indexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
-	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator<Nodo> iterator() {
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public int lastIndexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
-	public ListIterator<E> listIterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public ListIterator<Nodo> listIterator() {
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
-	public ListIterator<E> listIterator(int index) {
-		// TODO Auto-generated method stub
-		return null;
+	public ListIterator<Nodo> listIterator(int index) {
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	
@@ -185,44 +177,40 @@ public class Linkedlist<E> implements List<E>{
 	
 
 	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public E set(int index, E element) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	
-	public List<E> subList(int fromIndex, int toIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public <T> T[] toArray(T[] a) {
+		throw new RuntimeException ("Metodo en proceso");
+	}
+
+		public boolean remove(Object o) {
+		throw new RuntimeException ("Metodo en proceso");
+	}
+
+	public boolean add(Nodo e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Nodo set(int index, Nodo element) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public boolean add(E e) {
+	public List<Nodo> subList(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 	
 	

@@ -1,5 +1,10 @@
 package edu.escuelaing.arem.ASE.app;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import edu.escuelaing.arem.ASE.app.Linkedlist;
 import edu.escuelaing.arem.ASE.app.Nodo;
 
@@ -8,9 +13,9 @@ import edu.escuelaing.arem.ASE.app.Nodo;
  * @param <E>
  *
  */
-public class principal<E> 
+public class principal
 {
-	Linkedlist<E> list;
+	Linkedlist list;
 	Nodo actual,siguiente;
 	float Tmean = 0,Tstdes = 0,m;
 	
@@ -40,8 +45,17 @@ public class principal<E>
 		return (float) Math.sqrt(Tstdes / (list.size()-1));
 	}
 	
-    public static void main( String[] args )
+	public static void contenidofile (String file) throws FileNotFoundException,IOException {
+		String cadena;
+		FileReader f = new FileReader(file);
+		BufferedReader b = new BufferedReader(f);
+		while ((cadena = b.readLine()) != null ) {
+			System.out.println(cadena);
+		}
+	}
+	
+    public static void main( String[] args ) throws IOException
     {
-        System.out.println( "Hello World!" );
+    	contenidofile("/Users/jimmy97/Desktop/test.txt");
     }
 }
