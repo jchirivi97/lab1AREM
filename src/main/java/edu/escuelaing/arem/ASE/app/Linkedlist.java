@@ -10,7 +10,9 @@ import java.util.ListIterator;
 import edu.escuelaing.arem.ASE.app.Nodo;
 
 /**
- * @author jimmy.chirivi
+ *  Consiste en una secuencia de nodos, en los que se guardan campos de datos arbitrarios y 
+ *  una o dos referencias, enlaces o punteros al nodo anterior o posterior.
+ * @author Jimmy Armando Chirivi Nivia
  *
  */
 public class Linkedlist implements List<Nodo>{
@@ -22,10 +24,9 @@ public class Linkedlist implements List<Nodo>{
 	
 	
 	/**
-	 *Creador de la clase Linkedlist 
-	 *
+	 *Creador de la clase Linkedlist donde se inicializa la longitud y cabeza de la linkedlist 
 	 *@param No tiene elementos de entrada
-	 *@see Se crea una lista indexada donde se define l
+	 * 
 	 *
 	 */
 	public Linkedlist(){
@@ -34,13 +35,34 @@ public class Linkedlist implements List<Nodo>{
 		nodolast = null;
 	}
 	
+	
+	/**
+	 *Clase encargada de retornar el primero de la linkedlist 
+	 *@param No tiene elementos de entrada
+	 *@return retorna el primero de la lista tipo Nodo
+	 *
+	 */
 	public Nodo getFirst() {
 		return nodofirst;
 	}
 	
+	/**
+	 *Clase encargada de retornar el ultimo de la linkedlist 
+	 *@param No tiene elementos de entrada
+	 *@return retorna el ultimo de la lista tipo Nodo
+	 *
+	 */
+	
 	public Nodo getLast() {
 		return nodolast;
 	}
+	
+	/**
+	 *Clase encargada de agregar un nodo en la linkedlist 
+	 *@param dato de tipo float
+	 *@return boleano de confirmacion
+	 *
+	 */
 
 	public boolean add(float nodo) {
 		nodonew = new Nodo(nodo);
@@ -58,6 +80,13 @@ public class Linkedlist implements List<Nodo>{
 		}
 	}
 	
+	/**
+	 *Clase encargada de verificar si esta vacia o llena la linkedlist 
+	 *@param No elementos de entrada
+	 *@return boleano de confirmacion
+	 *
+	 */
+	
 	public boolean isEmpty() {
 		if (longitud == 0) {
 			return true;
@@ -67,9 +96,24 @@ public class Linkedlist implements List<Nodo>{
 		}
 	}
 	
+	
+	/**
+	 *Clase encargada de verificar el tamaño dela  linkedlist 
+	 *@param No elementos de entrada
+	 *@return entero con el tamaño de la lista
+	 *
+	 */
+	
 	public int size() {
 		return longitud;
 	}
+	
+	/**
+	 *Clase encargada de eliminar el primer nodo de la  linkedlist 
+	 *@param No elementos de entrada
+	 *@return primero nodo de la lista
+	 *
+	 */
 	
 	public Nodo removeFirst() {
 		nodoremove = nodofirst;
@@ -85,6 +129,13 @@ public class Linkedlist implements List<Nodo>{
 		return nodoremove;
 	}
 	
+	/**
+	 *Clase encargada de eliminar el ultimo nodo de la  linkedlist 
+	 *@param No elementos de entrada
+	 *@return ultimo nodo de la lista
+	 *
+	 */
+	
 	public Nodo removeLast() {
 		nodoprev = nodofirst;
 		nodoact = nodofirst.getNextNodo();
@@ -97,10 +148,18 @@ public class Linkedlist implements List<Nodo>{
 		return nodoact;
 	}
 	
+	/**
+	 *Clase encargada de eliminar un nodo de la  linkedlist 
+	 *@param entero con el index del nodo 
+	 *@return Nodo eliminado
+	 *
+	 */
+	
 	public Nodo remove(int index) {
 		index += 1; 
 		if (index == 0) {
 			removeFirst();
+			
 		}
 		else {
 			nodoprev = nodofirst;
@@ -199,18 +258,15 @@ public class Linkedlist implements List<Nodo>{
 	}
 
 	public boolean add(Nodo e) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public Nodo set(int index, Nodo element) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 
 	public List<Nodo> subList(int fromIndex, int toIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new RuntimeException ("Metodo en proceso");
 	}
 	
 	
