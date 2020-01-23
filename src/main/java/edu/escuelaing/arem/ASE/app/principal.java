@@ -27,7 +27,7 @@ public class principal
 		actual = list.getFirst();
 		Tmean += actual.getDatoNodo();
 		siguiente = actual.getNextNodo();
-		for (int i = 2; i < list.size();i++ ) {
+		for (int i = 1; i < list.size();i++ ) {
 			actual = siguiente;
 			siguiente = actual.getNextNodo();
 			Tmean += actual.getDatoNodo();
@@ -35,17 +35,21 @@ public class principal
 		return Tmean / list.size();
 	}
 	
+	
+	
 	public float StandardDesviation () {
 		m = Tmean / list.size();
 		actual = list.getFirst();
 		Tstdes += (float) Math.pow((actual.getDatoNodo() - m),2);
 		siguiente = actual.getNextNodo();
-		for (int i = 2; i < list.size(); i++) {
+		for (int i = 1; i < list.size(); i++) {
 			actual = siguiente;
 			siguiente = actual.getNextNodo();
 			Tstdes += (float) Math.pow((actual.getDatoNodo() - m), 2);
 		}
-		return (float) Math.sqrt(Tstdes / (list.size()-1));
+		
+				
+		return (float) Math.round(Math.sqrt(Tstdes / (list.size()-1)) * 100) / 100;
 	}
 	
 	public Linkedlist getLinkedlist() {
@@ -76,7 +80,9 @@ public class principal
 		princ.list.add(624);
 		princ.list.add(1503);
 		
-		System.out.println(princ.list.size());
+		System.out.println(princ.mean());
+		System.out.println(princ.StandardDesviation());
+		
     	
     }
 }
