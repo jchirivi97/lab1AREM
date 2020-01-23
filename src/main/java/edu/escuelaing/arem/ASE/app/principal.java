@@ -9,16 +9,19 @@ import edu.escuelaing.arem.ASE.app.Linkedlist;
 import edu.escuelaing.arem.ASE.app.Nodo;
 
 /**
- * Hello world!
- * @param <E>
+ * 
+ * @param 
  *
  */
 public class principal
 {
-	Linkedlist list;
-	Nodo actual,siguiente;
+	public Linkedlist list;
+	private Nodo actual,siguiente;
 	float Tmean = 0,Tstdes = 0,m;
 	
+	public principal () {
+		list = new Linkedlist();
+	}
 	
 	public float mean () {
 		actual = list.getFirst();
@@ -45,6 +48,10 @@ public class principal
 		return (float) Math.sqrt(Tstdes / (list.size()-1));
 	}
 	
+	public Linkedlist getLinkedlist() {
+		return list;
+	}
+	
 	public static void contenidofile (String file) throws FileNotFoundException,IOException {
 		String cadena;
 		FileReader f = new FileReader(file);
@@ -56,6 +63,20 @@ public class principal
 	
     public static void main( String[] args ) throws IOException
     {
-    	contenidofile("/Users/jimmy97/Desktop/test.txt");
+    	//contenidofile("/Users/jimmy97/Desktop/test.txt");
+    	principal princ = new principal();
+    	princ.list.add(160);
+		princ.list.add(591);
+		princ.list.add(114);
+		princ.list.add(229);
+		princ.list.add(230);
+		princ.list.add(270);
+		princ.list.add(128);
+		princ.list.add(1657);
+		princ.list.add(624);
+		princ.list.add(1503);
+		
+		System.out.println(princ.list.size());
+    	
     }
 }
