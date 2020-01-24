@@ -98,8 +98,8 @@ public class principal
 	 * @param lista de strings
 	 * 
 	 */
-	/*
-    public static void main( String[] args ) throws IOException
+	
+   /* public static void main( String[] args ) throws IOException
     {
     	//contenidofile("/Users/jimmy97/Desktop/test.txt");
     	principal princ = new principal();
@@ -113,7 +113,7 @@ public class principal
 		princ.list.add(1657);
 		princ.list.add(624);
 		princ.list.add(1503);
-		
+		//princ.mean();
 		//System.out.println(princ.mean());
 		System.out.println(princ.StandardDesviation());
 		

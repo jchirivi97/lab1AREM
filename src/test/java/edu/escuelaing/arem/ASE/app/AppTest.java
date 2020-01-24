@@ -47,7 +47,6 @@ public class AppTest
 		princ.list.add(1657);
 		princ.list.add(624);
 		princ.list.add(1503);
-		princ.mean();
 		//System.out.println(princ.StandardDesviation());			
 		assertTrue(princ.StandardDesviation() == (float) 572.03);
 	}
@@ -89,8 +88,7 @@ public class AppTest
 		princ.list.add((float)38.8);
 		princ.list.add((float)138.2);
 		
-		//System.out.println(princ.mean() == (float) 550.6);			
-		princ.mean();
+		//System.out.println(princ.mean() == (float) 550.6);
 		assertTrue(princ.StandardDesviation() == (float) 62.26);
 	}
 	
