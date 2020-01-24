@@ -31,3 +31,19 @@ Para este laboratorio se utiliza el editor de preferencia Eclipce y ademas la im
 4. Para ver el desarrollo del aplicativo solo basta con iniciar el editor de java de preferencia para evidenciar el codigo
 
 ![captura4](https://raw.githubusercontent.com/jchirivi97/lab1AREM/master/pictures/Captura4.JPG)
+
+## Construido con
+
+* [Java] (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Maven] (https://maven.apache.org/)
+
+
+## Autores
+
+* Jimmy Armando Chirivi Nivia
+
+Consulte también la lista de [contribuyentes] (https://github.com/your/project/contributors) que participaron en este proyecto.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - vea el archivo [LICENSE.md] (LICENSE.md) para más detalles
